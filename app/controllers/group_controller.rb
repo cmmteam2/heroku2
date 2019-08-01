@@ -30,7 +30,7 @@ class GroupController < ApplicationController
         @mygroup = Group.find(params[:id])
         @uhg = GroupsUser.where(:group_id => params[:id])
         @uhgs= GroupsUser.all
-        @groupmessage = Groupmessage.where(:group_id => @mygroup.id).order("id DESC")
+        @groupmessage = Groupmessage.where(:group_id => @mygroup.id).order("id ASC")
         
         
     end

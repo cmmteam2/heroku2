@@ -114,6 +114,7 @@
     <p id="demo"></p>
     <% anothermessagecount = 0 %>
     <% mymessagecount = 0 %>
+    <ul style="list-style-type:circle;">
     <% @groupmessage.each do  |gm| %>
         <% if gm.user_id == session[:user]["id"] %>
             <% mymessagecount += 1 %>
@@ -143,9 +144,9 @@
                     <% else %>
                         <% if gm.message.index("@") %>
                             
-                            <a href="#" style="color:white;border-bottom:1px solid blue;text-decoration:none;"><%= gm.message %> </a>
+                            <li><a href="#" style="color:white;border-bottom:1px solid blue;text-decoration:none;"><%= gm.message %> </a></li>
                         <% else %>
-                            <%= gm.message %> 
+                            <li><%= gm.message %> </li>
                         <% end %>
                     <% end %>
                     </div>                   
@@ -228,9 +229,9 @@
                     <% if gm.message.nil? %>
                     <% else %>
                         <% if gm.message.index("@") %>
-                        <a href="#" style="color:#0084ff;border-bottom:1px solid blue;text-decoration:none;"><%= gm.message %> </a>
+                            <li><a href="#" style="color:#0084ff;border-bottom:1px solid blue;text-decoration:none;"><%= gm.message %> </a></li>
                         <% else %>
-                            <%= gm.message %> 
+                            <li><%= gm.message %> </li>
                         <% end %>
                     <% end %>
                         
@@ -280,6 +281,7 @@
             </div>
         <% end %>
     <% end %>
+    </ul>
     </div>
     <%= form_tag("/views_#{@mygroup.id}", method: "post",id:"form1" ,style:"transform:translate(0,-100%);") do %>
         <% mygroup = 0 %>
