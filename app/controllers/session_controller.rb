@@ -26,7 +26,7 @@ class SessionController < ApplicationController
             else
                 @favouritemsgs = Groupmessage.where("favourite = ? AND favouritebyuserid = ?", true, session[:user]["id"])
                 @isadmin = User.find_by(role:"1")
-                @users = User.page(params[:page]).per(3)
+                @users = User.page(params[:page]).per(4)
                 @totalusers = User.all
                 @groups = Group.all
                 @workspaces = Workspace.all

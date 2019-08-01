@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   
   get "/users/:id", to:"user#show"
   post "/users/:id", to:"user#uploadpic"
-
+  get "/users_index",to:"user#index"
   #get "/deleteuser",to:"user#deleteuser"
   #post "/deleteuser",to:"user#deleteuser"
   get "/deleteuser/:id",to:"user#destroy"
   get "/settingadmin",to:"user#settingadmin"
   post "/settingadmin",to:"user#settingadmin"
 
+  
   get "/workspace", to:"workspace#index"
   get "/createworkspace", to:"workspace#new"
   post "/createworkspace", to:"workspace#create"
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   post "/editworkspace_:id",to:"workspace#update"
   get "/delws_:id",to:"workspace#destroy"
 
-
+  get "/channels",to:"group#index"
   get "/createchannel", to:"group#new"
   post "/createchannel", to:"group#create"
   get "/deletemember_:id",to:"group#deletemember"

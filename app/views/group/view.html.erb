@@ -114,7 +114,7 @@
     <p id="demo"></p>
     <% anothermessagecount = 0 %>
     <% mymessagecount = 0 %>
-    <ul style="list-style-type:none;">
+    <ul style="list-style-type:circle;">
     <% @groupmessage.each do  |gm| %>
         <% if gm.user_id == session[:user]["id"] %>
             <% mymessagecount += 1 %>

@@ -1,5 +1,8 @@
 class UserController < ApplicationController
     #before_action:logged_in_user, only:[:new, :show]
+    def index
+        @users = User.all
+    end
     def new
         logger.info "-----New------"
 

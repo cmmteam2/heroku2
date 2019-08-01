@@ -1,4 +1,7 @@
 class GroupController < ApplicationController
+    def index
+        @group = Group.all
+    end
     def new
         logger.info "-----New------"
         @uhw = UsersWorkspace.where(:workspace_id => session[:user]["currentworkspace"])

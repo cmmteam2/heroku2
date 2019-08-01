@@ -1,8 +1,9 @@
 class WorkspaceController < ApplicationController
     def index
         logger.info "-----Index------"
-        @workspace =  Workspace.all
+        @workspace =  Workspace.page(params[:page]).per(4)
     end
+    def
     def create
         logger.info "-----Create------"
         w = Workspace.new(name:params[:name],owner:session[:user]["id"])
